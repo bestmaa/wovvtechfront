@@ -1,0 +1,31 @@
+th,td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+.showAndHide{
+    position: fixed;
+    z-index: 1000000;
+    top: 20%;
+    left: 50%;
+    background-color: rgb(179, 211, 240);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: none;
+}
+.b{
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+.x{
+    cursor: pointer;
+    background-color: bisque;
+    padding: 10px 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border: 1px solid black;
+}

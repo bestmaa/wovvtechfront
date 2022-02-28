@@ -1,0 +1,13 @@
+.dashbord>thead>tr{
+    border-bottom: 1px solid gray;
+    background-color: rgb(99, 99, 34);
+    border-radius: 10px;
+    color: aliceblue;
+}
+
+.dashbord>thead>tr>th,.dashbord>tbody>tr>td{
+    padding: 7px;
+}
+.dashbord>tbody>tr:hover{
+    background-color: rgba(233, 222, 210,0.5);
+}

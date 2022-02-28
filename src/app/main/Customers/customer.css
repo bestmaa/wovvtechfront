@@ -1,0 +1,13 @@
+.viewcustomer>thead>tr{
+    border-bottom: 1px solid gray;
+    background-color: rgb(99, 99, 34);
+    border-radius: 10px;
+    color: aliceblue;
+}
+
+.viewcustomer>thead>tr>th,.viewcustomer>tbody>tr>td{
+    padding: 7px;
+}
+.viewcustomer>tbody>tr:hover{
+    background-color: rgba(233, 222, 210,0.5);
+}
