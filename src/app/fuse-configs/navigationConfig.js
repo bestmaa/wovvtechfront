@@ -158,6 +158,12 @@ const navigationBuilderDashboard=[
 		type: 'item',
 		url: '/Builder/holiday'
 	},
+	{
+		id: 'update-hours',
+		title: 'Update Hours',
+		type: 'item',
+		url: '/Builder/update-hours'
+	},
 ]
 const navigationConfig = [
 	{

@@ -1,15 +1,16 @@
 import { createEntityAdapter, createSlice, createAsyncThunk, createReducer } from '@reduxjs/toolkit';
+import { baseUrl } from 'app/main/ApiUri';
 import axios from 'axios';
 
 export const setCustomer = createAsyncThunk('customers/data', async (customerData, { dispatch }) => {
 	console.log("samjhe",customerData);
-	const response = await axios.post('http://localhost:4000/api/v1/create-customer', customerData);
+	const response = await axios.post(`${baseUrl}create-customer`, customerData);
 	const data = await response.data;
 	return data;
 });
 export const getCustomer = createAsyncThunk('customers/get/data', async () => {
 	console.log('ho raha h');
-	const response = await axios.get('http://localhost:4000/api/v1/view-customer');
+	const response = await axios.get(`${baseUrl}view-customer`);
 	const data = await response.data;
 	// debugger
 	return data;

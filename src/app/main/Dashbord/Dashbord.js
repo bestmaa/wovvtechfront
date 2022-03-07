@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import './dashbord.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { baseUrl } from '../ApiUri';
 // import { getCustomer } from './Store/Customers';
 
 function Dashbord() {
@@ -12,16 +13,22 @@ function Dashbord() {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		// dispatch(getCustomer())
-		fetch('http://localhost:4000/api/v1/view-customer')
+		// fetch(`${baseUrl}/view-customer`)
+		// 	.then(res => res.json())
+		// 	.then(data => setTableData(data.Customer));
+		fetch(`http://localhost:1337/api/customers`)
 			.then(res => res.json())
-			.then(data => setTableData(data.Customer));
-	}, [dispatch]);
+			.then(data => {
+				console.log('sssss',data);
+				setTableData(data.Customer);
+			});
+	}, []);
 	// console.log('000', customerData);
 	return (
 		<div>
 			{!tableData && <h1>Loading......</h1>}
 			{/* <MyLoader /> */}
-            <h1 className='text-center'>My Customer</h1>
+			<h1 className="text-center">My Customer</h1>
 			<div style={{ width: '95%' }} className="m-auto shadow-5 p-10 rounded-6">
 				<table className="table-auto dashbord">
 					<thead>

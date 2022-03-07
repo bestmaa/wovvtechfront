@@ -1,7 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { Holiday } from './Builder';
+import { Holiday, Member, GetMember, Hours } from './Builder';
 const reducer = combineReducers({
-	Holiday
+	Holiday,
+	Member,
+	GetMember,
+	Hours
 });
 
 export default reducer;

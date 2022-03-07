@@ -1,5 +1,6 @@
 import AddNew from './AddNew';
 import Holiday from './Holiday';
+import UpdateHours from './UpdateHours';
 export const BuilderConfig = {
 	settings: {},
 	routes: [
@@ -10,6 +11,10 @@ export const BuilderConfig = {
 		{
 			path: '/Builder/holiday',
 			component: Holiday
+		},
+		{
+			path: '/Builder/update-hours',
+			component: UpdateHours
 		},
 	]
 };

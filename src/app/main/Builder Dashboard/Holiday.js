@@ -4,7 +4,7 @@ import { MyInput, MyInputDate } from '../MyFromElement/MyFormElement';
 import { getHoliday, setHoliday } from './Store/Builder';
 function Holiday() {
 	const dispatch = useDispatch();
-	const { Holiday } = useSelector(state => state.Holiday);
+	const { Holiday } = useSelector(state => state.Builder);
 	useEffect(() => {
 		dispatch(getHoliday());
 	}, [dispatch]);
@@ -33,13 +33,14 @@ function Holiday() {
 				}
 			}
 			// console.log('form datas', allFormData);
-			dispatch(setHoliday(allFormData));
+			let senddata={data:allFormData}
+			dispatch(setHoliday(senddata));
 		} else {
 			alert('* indicates required fields');
 		}
 	}
 	function convertDate(n) {
-		let date = new Date(n);
+		let date = new Date(Number(n));
 		return date.getDate().toString() + '-' + date.getMonth().toString() + '-' + date.getFullYear().toString();
 	}
 	return (
@@ -69,10 +70,10 @@ function Holiday() {
 						</thead>
 						<tbody>
 							{Holiday !== null &&
-								Holiday?.list?.Holiday?.map((d, i) => (
+								Holiday?.list?.data?.map((d, i) => (
 									<tr key={i}>
-										<td>{convertDate(d.HolidayDate)}</td>
-										<td>{d.HolidayName}</td>
+										<td>{convertDate(d.attributes.HolidayDate)}</td>
+										<td>{d.attributes.HolidayName}</td>
 									</tr>
 								))}
 						</tbody>
